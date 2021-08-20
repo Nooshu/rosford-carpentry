@@ -1,68 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rosford Carpentry | Oxford</title>
     <meta name="description" content="Rosford Carpentry | Oxford. Carpentry services Oxford.">
-    <link rel="shortcut icon" href="favicon.ico">
-    <link href="/assets/css/normalize.css" rel="stylesheet">
-    <link href="/assets/css/css.css" rel="stylesheet" type="text/css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="/assets/css/styles.css" rel="stylesheet" type="text/css">
-    <script src="/assets/js/jquery.js"></script>
-  </head>
-  <body cz-shortcut-listen="true">
+    <link rel="stylesheet" href="assets/css/rework.css">
+</head>
+<body>
     <div id="main">
-      <nav>
-        <ul>
-          <li>
-            <a href="/">home</a>
-          </li>
-          <li>
-            <a href="/projects">projects</a>
-          </li>
-          <li>
-            <a href="/contact">contact</a>
-          </li>
-        </ul>
-      </nav>
-      <header>
-        <h1>Rosford <span>Carpentry</span></h1>
-      </header>
-	  <div id="content">
-		<h2>Welcome to Rosford Carpentry</h2>
-		<p>Rosford Carpentry is a well established business in Oxfordshire catering for all your needs in your Household from start to finish, providing honest,reliable and quality workmanship.</p>
-		<p>Please take a browse through our past projects to give you an insight into the different types of work we do.Dont quite see what your looking for? Have no hesitation in contacting us.</p> 
-		<p>All associated trades can be supplied to make completion of work stress free.</p>
-		
-		<div id="slideshow">
-			<img src="/assets/images/87_1423580958169.jpg" alt="">
-			<img src="/assets/images/93_20160705_161654.jpg" alt="">
-			<img src="/assets/images/98_20160331_143942.jpg" alt="">
-			<img src="/assets/images/image12.jpg" alt="">
-			<img src="/assets/images/84_IMAG0309.jpg" alt="">
-		  </div>
-	</div>
-	<div id="sidebar">
-        <div id="callnow">
-          <span class="phone">07897 143 203</span>
-          <a href="mailto:steve@rosfordcarpentry.co.uk?New%20website%20inquiry">steve@rosfordcarpentry.co.uk</a>
+    <header>
+        <nav>
+            <ul>
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="/projects/">Projects</a></li>
+                <li><a href="/contact/">Contact</a></li>
+            </ul>
+        </nav>
+
+        <h1>
+            Rosford <span>Carpentry</span>
+        </h1>
+    </header>
+    <div id="content">
+        <h2>Welcome to Rosford Carpentry</h2>
+        <p>Rosford Carpentry is a well established business in Oxfordshire catering for all your needs in your Household from start to finish, providing honest,reliable and quality workmanship.</p>
+        <p>Please take a browse through our past projects to give you an insight into the different types of work we do. Don't quite see what you're looking for? Have no hesitation in contacting us.</p> 
+        <p>All associated trades can be supplied to make completion of work stress free.</p>
+        
+        <div id="container">
+            <img id="slideimg0" class="slide showMe" src="/assets/images/homepage/1.jpg" alt="">
+            <img id="slideimg1" class="slide" src="/assets/images/homepage/2.jpg" alt="">
+            <img id="slideimg2" class="slide" src="/assets/images/homepage/3.jpg" alt="">
+            <img id="slideimg3" class="slide" src="/assets/images/homepage/4.jpg" alt="">
+            <img id="slideimg4" class="slide" src="/assets/images/homepage/5.jpg" alt="">
+            <div></div>
         </div>
-        <div id="services">
-          <h3>Our services</h3>
-          <p> - Roofing <br>- loft conversions <br>- 1st fix / 2nd fix <br>- Kitchens <br>- Wardrobes <br>- Wooden Floors <br>- Decking <br>- stairs <br>
-          </p>
+    </div>
+    
+    <div id="sidebar">
+        <div class="side-box callnow">
+            <a href="tel:+447897143203" class="phone">07897 143 203</a>
+            <a href="mailto:steve@rosfordcarpentry.co.uk?New%20website%20inquiry" class="email">steve@rosfordcarpentry.co.uk</a>
         </div>
-        <div id="areas">
-          <h3>Areas we cover</h3>
-          <p> - Oxfordshire <br>- Buckinghamshire <br>- Hertfordshire <br>
-            <br>Do we cover your area? <br>
-            <a href="/contact">Contact us</a>
-          </p>
+
+        <div class="side-box services">
+            <h3>Our services</h3>
+            <ul>
+                <li>Roofing</li>
+                <li>Loft conversions</li>
+                <li>1st fix / 2nd fix</li>
+                <li>Kitchens</li>
+                <li>Wardrobes</li>
+                <li>Wooden Floors</li>
+                <li>Decking</li>
+                <li>Stairs</li>
+            </ul>
         </div>
-      </div>  
-	</div>
-    <footer> © Rosford Carpentry </footer>
-  </body>
+
+        <div class="side-box areas">
+            <h3>Areas we cover</h3>
+            <ul>
+                <li>Oxfordshire</li>
+                <li>Buckinghamshire</li>
+                <li>Hertfordshire</li>
+            </ul>
+            <p>Do we cover your area? <a href="/contact">Contact us</a></p>
+        </div>
+    </div>
+
+    <footer> &copy; Rosford Carpentry </footer>
+</div>
+<script>
+    var timer = setInterval(nextImage, 4000);
+    var curImage = 0;
+    var numImages = 5;
+
+    function nextImage() {
+        var e;
+        // remove showMe class from current image
+        e = document.getElementById("slideimg" + curImage);
+        removeClass(e, "showMe");
+        
+        // compute next image
+        curImage++;
+        if (curImage > numImages - 1) {
+            curImage = 0;
+        }
+        
+        // add showMe class to next image
+        e = document.getElementById("slideimg" + curImage);
+        addClass(e, "showMe");
+    }
+        
+    function addClass(elem, name) {
+        var c = elem.className;
+        if (c) c += " ";  // if not blank, add a space separator
+        c += name;
+        elem.className = c;
+    }
+
+    function removeClass(elem, name) {
+        var c = elem.className;
+        elem.className = c.replace(name, "").replace(/\s+/g, " ").replace(/^\s+|\s+$/g, "");  // remove name and extra blanks
+    }
+</script>
+</body>
 </html>
